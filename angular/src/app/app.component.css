@@ -1,0 +1,12 @@
+.screen {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+div .menu{
+  flex: 1 22%;
+}
+div .right{
+  flex: 1 77%;
+}

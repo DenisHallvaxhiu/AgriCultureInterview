@@ -2,14 +2,37 @@
   min-width: 250px;
   width: 20%;
   height: 99%;
-  background: linear-gradient(#cfdbf2, #e8d7e7);
+  background: linear-gradient(-115deg,#bed2f7, #d3cbd2);
   font-size: 20px;
   float: left;
   position: fixed;
   border-radius: 15px;
   margin: 0.25% 0 0 5px;
 }
-
+.menu > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 100%;
+}
+.menu > div > button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+  background: #a15ff4;
+  border: none;
+  border-radius: 10px;
+  color: #fdfbff;
+  font-size: 20px;
+  font-weight: 600;
+}
+button>img{
+  width: 30px;
+  margin-right: 10px;
+}
 .menu>a {
   position: relative;
   top: 20px;
@@ -20,16 +43,16 @@
   height: 50px;
   text-align: center;
   float: right;
-  border-radius: 10px 0 0 10px;
-  margin-top: 20px;
+  border-radius: 20px 0 0 20px;
+  margin-top: 30px;
   line-height: 50px;
   transition: color .5s;
-  color: #fdfff4;
+  color: #f7f8f1;
 }
 
 .menu>a:target {
   color: #2a2a2a;
-  background-color: #fdfff4;
+  background-color: #f2f2fd;;
 }
 
 .menu>a::after,
@@ -51,9 +74,9 @@
 }
 
 .menu>a:target::after {
-  box-shadow: 0 25px 0 0 #fdfff4;
+  box-shadow: 0 25px 0 0 #f2f2fd;;
 }
 
 .menu>a:target::before {
-  box-shadow: 0 -25px 0 0 #fdfff4;
+  box-shadow: 0 -25px 0 0 #f2f2fd;;
 }

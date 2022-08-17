@@ -1,0 +1,24 @@
+<div class="nav">
+  <div class="input">
+    <img src="../../assets/icons/search.svg" alt="" /><input type="text" />
+  </div>
+  <a href="">Explore</a>
+  <a href="">About Us</a>
+  <a href="">Premiun</a>
+  <button (click)="togglePopup()">Login</button>
+  <img src="../../assets/icons/profile-icon.svg" alt="" />
+</div>
+<div class="popup" [ngClass]="{'active':popup}">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="close-btn" (click)="togglePopup()">X</div>
+    <h1>Log in</h1>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatum
+      officia voluptas veniam asperiores, in dolorum porro vero deleniti ratione
+      nesciunt voluptate alias tempora, laborum possimus amet atque repellat
+      architecto?
+    </p>
+  </div>
+</div>
+<!--  -->
