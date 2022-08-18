@@ -5,20 +5,32 @@
   <a href="">Explore</a>
   <a href="">About Us</a>
   <a href="">Premiun</a>
-  <button (click)="togglePopup()">Login</button>
-  <img src="../../assets/icons/profile-icon.svg" alt="" />
+  <button *ngIf="(!profile)" (click)="togglePopup()">Log In</button>
+  <button *ngIf="(profile)" (click)="logOut()">Log Out</button>
+  <img *ngIf="(!profile)" src="../../assets/icons/profile-icon.svg" alt="" />
+  <img *ngIf="(profile)" src="https://i.pinimg.com/736x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg" alt="" />
 </div>
-<div class="popup" [ngClass]="{'active':popup}">
+<div class="popup" [ngClass]="{ active: popup }">
   <div class="overlay"></div>
   <div class="content">
     <div class="close-btn" (click)="togglePopup()">X</div>
     <h1>Log in</h1>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum voluptatum
-      officia voluptas veniam asperiores, in dolorum porro vero deleniti ratione
-      nesciunt voluptate alias tempora, laborum possimus amet atque repellat
-      architecto?
-    </p>
+    <span>Try : Zheng Mu</span>
+    <div class="form-container">
+      <!-- Form -->
+      <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" ngModel required/>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" ngModel required/>
+        </div>
+        <button [disabled]="!loginForm.valid" class="loginBtn" (click)="getLogin(loginForm)" type="submit">Submit</button>
+        <p *ngIf="(user)">User doesn't exist!</p>
+      </form>
+    </div>
   </div>
 </div>
 <!--  -->

@@ -1,24 +1,16 @@
 <div class="financial">
   <div class="chart">
-    <canvas id="countries" data="[299,500,123,43]"></canvas>
+    <canvas id="expensis"></canvas>
   </div>
   <div class="legend">
     <div>
-      <p>Shipping & Receiving</p>
-      <p>Document Control</p>
-      <p>Human Resources</p>
-      <p>Tool Design</p>
-      <p>Marketing</p>
-      <p>Purchasing</p>
-      <p>Finance</p>
-      <p>Engineering</p>
-      <p>Information Service</p>
-      <p>Sales</p>
-      <p>Production</p>
+      <p class="left" *ngFor="let result of SalaryArray">
+        {{ result.Department }}
+      </p>
     </div>
     <div>
-      <p *ngFor="let result of employeeData | async">
-        {{ result.Salary * 40 * 52 | number: "1.0-0" }}$
+      <p *ngFor="let result of SalaryArray">
+        {{ result.Salary }}$
       </p>
     </div>
   </div>

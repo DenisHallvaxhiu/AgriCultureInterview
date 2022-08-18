@@ -1,7 +1,17 @@
-<div>
-  <div class="chart"><canvas id="countries" data="[299,500,123,43]"></canvas></div>
-  <div class="legend" >
-    <p *ngFor="let result of employeeData | async">{{ result.Salary }}</p>
+<div class="stats">
+  <div class="statistic">
+    <div class="polarArea">
+      <p>Territory Group</p>
+      <canvas id="territory"></canvas>
+    </div>
+    <div class="doughnut">
+      <p>Gender</p>
+      <canvas id="gender"></canvas>
+    </div>
+  </div>
+  <div class="line">
+    <p>Sales per Quarter</p>
+    <canvas id="quoterSales"></canvas>
   </div>
 </div>
 <!--  -->

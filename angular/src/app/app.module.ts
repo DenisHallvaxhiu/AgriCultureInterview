@@ -12,6 +12,7 @@ import { TransferComponent } from './transfer/transfer.component';
 import { ReferComponent } from './refer/refer.component';
 import { SupportComponent } from './support/support.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

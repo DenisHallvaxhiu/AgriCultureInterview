@@ -8,12 +8,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path:"statistic",component:StatisticComponent},
-  {path:"financial",component:FinancialComponent},
-  {path:"product",component:ProductComponent},
-  {path:"transfer",component:TransferComponent},
-  {path:"refer",component:ReferComponent},
-  {path:"support",component:SupportComponent},
+  { path: 'statistic', component: StatisticComponent },
+  { path: 'financial', component: FinancialComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'transfer', component: TransferComponent },
+  { path: 'refer', component: ReferComponent },
+  { path: 'support', component: SupportComponent },
+  { path: '', redirectTo: '/statistic#statistic', pathMatch: 'full' },
+  { path: '**', redirectTo: '/statistic#statistic'}
 ];
 
 @NgModule({

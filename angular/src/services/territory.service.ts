@@ -4,14 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class GetDSService {
+export class TerritoryService {
 
-  private url = 'http://localhost:1234/GetAllDS';
+  private url = 'http://localhost:1234/GetTerritoryGroup';
 
   constructor(private httpClient: HttpClient) { }
 
-  getPostsGetAllDS(){
+  getTerritory(){
     return this.httpClient.get(`${this.url}`);
   }
-
 }

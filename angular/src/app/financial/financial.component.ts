@@ -11,54 +11,70 @@ import { registerables } from 'chart.js';
 export class FinancialComponent implements OnInit {
 
 
+  SalaryArray:{
+    Salary:number;
+    Department:string
+  }[]=[]
   employeeData: any;
 
   constructor(private GetDSService:GetDSService) { }
 
   ngOnInit(): void {
-    this.employeeData = this.GetDSService.getPostsGetAllDS();
-
-    Chart.register(...registerables);
-
-    const pieChart = new Chart('countries', {
-      type: 'pie',
-      data: {
-        labels: [
-          'Shipping & Receiving',
-          'Sales',
-          'Finance',
-          'Document Control',
-          'Tool Design',
-          'Human Resources',
-          'Marketing',
-          'Production',
-          'Purchasing',
-          'Engineering',
-          'Information Service',
-        ],
-        datasets: [
-          {
-            label: 'My First Dataset',
-            data: [135200, 1122150, 497850, 147680, 226080, 224950, 312000, 5268608, 457439, 501000, 701500],
-            backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',
-              'rgb(120,12,12)',
-              'rgb(100,100,100)',
-              'rgb(250,200,150)',
-              'rgb(24, 33, 27)',
-              'rgb(37, 87, 249)',
-              'rgb(153, 237, 109)',
-              'rgb(130, 49, 237)',
-              'rgb(98, 137, 19)',
-            ],
-          },
-        ],
-      },
-    });
+    this.getFinance()
   }
 
+  getFinance() {
+    this.GetDSService.getPostsGetAllDS().subscribe((response) => {
+      this.employeeData = response;
 
+      Chart.register(...registerables);
+      let data = []
+      let department = []
+      for(let result of this.employeeData){
+        this.SalaryArray.push({'Salary':Math.round(result.Salary)*52*40,'Department':result.Department})
+        data.push(Math.round(result.Salary)*52*40)
+        department.push(result.Department)
+      }
+      console.log(department);
+
+      const pieChart = new Chart('expensis', {
+        type: 'pie',
+        data: {
+          labels: [
+            'Shipping & Receiving',
+            'Sales',
+            'Finance',
+            'Document Control',
+            'Tool Design',
+            'Human Resources',
+            'Marketing',
+            'Production',
+            'Purchasing',
+            'Engineering',
+            'Information Service',
+          ],
+          datasets: [
+            {
+              label: 'My First Dataset',
+              data: data,
+              backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+                'rgb(120,12,12)',
+                'rgb(100,100,100)',
+                'rgb(250,200,150)',
+                'rgb(24, 33, 27)',
+                'rgb(37, 87, 249)',
+                'rgb(153, 237, 109)',
+                'rgb(130, 49, 237)',
+                'rgb(98, 137, 19)',
+              ],
+            },
+          ],
+        },
+      });
+    });
+  }
 
 }

@@ -4,13 +4,13 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class GetEmployeesService {
+export class GenderService {
 
-  private url = 'http://localhost:1234/';
+  private url = 'http://localhost:1234/GetGender';
 
   constructor(private httpClient: HttpClient) { }
 
-  getPosts(){
-    return this.httpClient.get(this.url);
+  getGender(){
+    return this.httpClient.get(`${this.url}`);
   }
 }
