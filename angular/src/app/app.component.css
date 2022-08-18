@@ -8,5 +8,8 @@ div .menu{
   flex: 1 22%;
 }
 div .right{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   flex: 1 77%;
 }
