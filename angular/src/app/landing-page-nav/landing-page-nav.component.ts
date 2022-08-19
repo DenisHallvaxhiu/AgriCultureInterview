@@ -18,6 +18,7 @@ export class LandingPageNavComponent implements OnInit {
 
   togglePopup() {
     this.popup = !this.popup;
+
   }
   logOut(){
     this.profile = !this.profile

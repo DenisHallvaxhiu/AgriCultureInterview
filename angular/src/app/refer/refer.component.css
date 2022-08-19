@@ -1,0 +1,31 @@
+.refer{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.refer > iframe{
+  width: 90%;
+  height: 700px;
+  border-radius: 20px;
+}
+.refer > div{
+  height: 100px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+button{
+  font-size: 20px;
+  border-radius: 10px;
+  background: linear-gradient(45deg,#7a7aa9, #903fc5);
+  margin:0 20px;
+  color: white;
+  padding: 10px;
+  border: none;
+}
+
+
+/*  */

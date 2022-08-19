@@ -4,7 +4,6 @@
   </div>
   <a href="">Explore</a>
   <a href="">About Us</a>
-  <a href="">Premiun</a>
   <button *ngIf="(!profile)" (click)="togglePopup()">Log In</button>
   <button *ngIf="(profile)" (click)="logOut()">Log Out</button>
   <img *ngIf="(!profile)" src="../../assets/icons/profile-icon.svg" alt="" />
@@ -13,7 +12,7 @@
 <div class="popup" [ngClass]="{ active: popup }">
   <div class="overlay"></div>
   <div class="content">
-    <div class="close-btn" (click)="togglePopup()">X</div>
+
     <h1>Log in</h1>
     <span>Try : Zheng Mu</span>
     <div class="form-container">
