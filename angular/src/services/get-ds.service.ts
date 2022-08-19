@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GetDSService {
 
-  private url = 'http://localhost:1234/GetAllDS';
+  private url = 'https://agricapture.herokuapp.com/GetAllDS';
 
   constructor(private httpClient: HttpClient) { }
 

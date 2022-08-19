@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class LoginService {
-  private url = 'http://localhost:1234/GetLogin';
+  private url = 'https://agricapture.herokuapp.com/GetLogin';
 
   constructor(private httpClient: HttpClient) {}
 

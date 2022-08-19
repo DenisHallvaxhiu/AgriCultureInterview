@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GenderService {
 
-  private url = 'http://localhost:1234/GetGender';
+  private url = 'https://agricapture.herokuapp.com/GetGender';
 
   constructor(private httpClient: HttpClient) { }
 

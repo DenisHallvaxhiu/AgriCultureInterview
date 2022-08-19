@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TerritoryService {
 
-  private url = 'http://localhost:1234/GetTerritoryGroup';
+  private url = 'https://agricapture.herokuapp.com/GetTerritoryGroup';
 
   constructor(private httpClient: HttpClient) { }
 
