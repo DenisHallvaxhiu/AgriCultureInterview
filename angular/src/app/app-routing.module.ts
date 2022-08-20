@@ -1,4 +1,3 @@
-import { SupportComponent } from './support/support.component';
 import { ReferComponent } from './refer/refer.component';
 import { FinancialComponent } from './financial/financial.component';
 import { StatisticComponent } from './statistic/statistic.component';
@@ -9,7 +8,6 @@ const routes: Routes = [
   { path: 'statistic', component: StatisticComponent },
   { path: 'financial', component: FinancialComponent },
   { path: 'refer', component: ReferComponent },
-  { path: 'support', component: SupportComponent },
   { path: '', redirectTo: '/statistic#statistic', pathMatch: 'full' },
   { path: '**', redirectTo: '/statistic#statistic'}
 ];
